@@ -7,10 +7,17 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.2.35)
       aws-sdk-core (= 2.2.35)
+    coderay (1.1.1)
     dotenv (2.1.1)
     jmespath (1.2.4)
       json_pure (>= 1.8.1)
     json_pure (1.8.3)
+    method_source (0.8.2)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    slop (3.6.0)
 
 PLATFORMS
   ruby
@@ -18,6 +25,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (~> 2)
   dotenv
+  pry
 
 BUNDLED WITH
    1.11.2
