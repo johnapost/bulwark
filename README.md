@@ -7,5 +7,5 @@ All of your S3 files are wide open to the world and you want to lock it down. Yo
 2. Navigate to the cloned repository. `cd privatize_s3_files`
 3. Install bundler. `gem install bundler`
 4. Bundle `bundle`
-5. Create a `.env` file. Populate it with: `S3_ACCESS_KEY_ID`, `S3_BUCKET`, and `S3_SECRET_ACCESS_KET`
+5. Create a `.env` file. Populate it with: `S3_ACCESS_KEY_ID`, `S3_BUCKET`, `S3_REGION`, and `S3_SECRET_ACCESS_KEY`. *If your region is US Standard, set S3_REGION=us-east-1*
 6. Run *privatize.rb* and all your files should be private now. `ruby privatize.rb`
