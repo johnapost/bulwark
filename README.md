@@ -1,6 +1,6 @@
 # Bulwark [![Code Climate](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/badges/b5171ef5b97a22f27c48/gpa.svg)](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/feed) [ ![Codeship Status for plicjo/bulwark](https://codeship.com/projects/e7b0f000-ead8-0133-1717-5e83b9717393/status?branch=master)](https://codeship.com/projects/148019)
 
-**Under Construction** Mass update your S3 file permissions.
+Mass update your S3 file permissions.
 
 ## Requirements
 * Ruby 2.0 or greater
@@ -31,13 +31,13 @@ S3_SECRET_ACCESS_KEY=foobar
 
 Make all your S3 files private:
 ```sh
-$ bulwark s3_files:privatize
+$ bulwark privatize_files
 ```
 
 Or make all your S3 files public-read:
 ```sh
-$ bulwark s3_files:publicize
+$ bulwark publicize_files
 ```
 
 ## License
-Bulwark is release under the [MIT License](https://opensource.org/licenses/MIT).
+Bulwark is released under the [MIT License](https://opensource.org/licenses/MIT).
