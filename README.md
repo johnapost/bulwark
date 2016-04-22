@@ -38,3 +38,6 @@ Or make all your S3 files public-read:
 ```sh
 $ bulwark s3_files:publicize
 ```
+
+## License
+Bulwark is release under the [MIT License](https://opensource.org/licenses/MIT).
