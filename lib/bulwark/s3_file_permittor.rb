@@ -2,8 +2,15 @@ module Bulwark
   class S3FilePermittor
     attr_reader :client, :permission
 
-    def initialize(permission:)
-      @permission = permission
+    def initialize(command)
+      @permission = set_permission(command.first)
+    end
+
+    def set_permission(command)
+      command_to_permission(command)
+    rescue KeyError => e
+      puts "#{e} is not a valid Bulwark command. Try these:\n\nbulwark publicize_files\nbulwark privatize_file\n\n"
+      exit
     end
 
     def files
@@ -26,6 +33,14 @@ module Bulwark
     end
 
     private
+
+    def command_to_permission(command)
+      { 'privatize'       => 'private',
+        'privatize_files' => 'private',
+        'publicize'       => 'public-read',
+        'publicize_files' => 'public-read'
+      }.fetch(command)
+    end
 
     def client
       @client ||= begin
