@@ -29,7 +29,7 @@ module Bulwark
     end
 
     def bucket
-      ENV['S3_BUCKET']
+      ENV.fetch('S3_BUCKET')
     end
 
     private
@@ -45,9 +45,9 @@ module Bulwark
     def client
       @client ||= begin
         Aws::S3::Client.new(
-          access_key_id: ENV['S3_ACCESS_KEY_ID'],
-          secret_access_key: ENV['S3_SECRET_ACCESS_KEY'],
-          region: ENV['S3_REGION']
+          access_key_id: ENV.fetch('S3_ACCESS_KEY_ID'),
+          secret_access_key: ENV.fetch('S3_SECRET_ACCESS_KEY'),
+          region: ENV.fetch('S3_REGION')
         )
       end
     end
