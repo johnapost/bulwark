@@ -18,10 +18,10 @@ Gem::Specification.new do |gem|
   gem.executables           = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
   gem.test_files            = gem.files.grep(%r{^(spec)/}) { |f| File.basename(f) }
 
-  gem.add_development_dependency 'bundler', '~> 1.11.2'
-  gem.add_development_dependency 'rake', '~> 11.1.2'
-  gem.add_development_dependency 'rspec', '~> 3.4'
-  gem.add_development_dependency 'pry', '~> 0.10.3'
-  gem.add_dependency 'dotenv', '~> 2.1', '>= 2.1.1'
+  gem.add_development_dependency 'bundler', '~> 1.10'
+  gem.add_development_dependency 'rake'   , '~> 10.0'
+  gem.add_development_dependency 'rspec'  , '~> 3.4'
+  gem.add_development_dependency 'pry'    , '~> 0.10.3'
+  gem.add_dependency 'dotenv'             , '~> 2.1'    , '>= 2.1.1'
   gem.add_dependency 'aws-sdk', '~> 2'
 end
