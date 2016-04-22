@@ -1,4 +1,3 @@
-Bundler.require
 require 'dotenv'
 require 'aws-sdk'
 Dotenv.load
