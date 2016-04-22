@@ -1,6 +1,6 @@
 module Bulwark
   class S3FilePermittor
-    attr_reader :client, :permission
+    attr_reader :permission
 
     def initialize(command)
       @permission = set_permission(command.first)
