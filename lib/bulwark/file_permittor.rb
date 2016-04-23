@@ -6,13 +6,6 @@ module Bulwark
       @permission = set_permission(command.first)
     end
 
-    def set_permission(command)
-      command_to_permission(command)
-    rescue KeyError => e
-      puts "#{e} is not a valid Bulwark command. Try these:\n\nbulwark publicize_files\nbulwark privatize_file\n\n"
-      exit
-    end
-
     def change_permissions
       s3_bucket.files.each do |file|
         Aws::S3::ObjectAcl.new(s3_bucket.name, file[:key], client: s3_bucket.client).put({ acl: permission })
@@ -26,12 +19,19 @@ module Bulwark
 
     private
 
-    def command_to_permission(command)
+    def set_permission(argv)
+      argv_to_permission(argv)
+    rescue KeyError => e
+      puts "#{e} is not a valid Bulwark command. Try these:\n\nbulwark publicize_files\nbulwark privatize_files\n\n"
+      exit
+    end
+
+    def argv_to_permission(argv)
       { 'privatize'       => 'private',
         'privatize_files' => 'private',
         'publicize'       => 'public-read',
         'publicize_files' => 'public-read'
-      }.fetch(command)
+      }.fetch(argv)
     end
   end
 end
