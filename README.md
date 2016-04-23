@@ -1,4 +1,4 @@
-# Bulwark [![Code Climate](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/badges/b5171ef5b97a22f27c48/gpa.svg)](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/feed) [ ![Codeship Status for plicjo/bulwark](https://codeship.com/projects/e7b0f000-ead8-0133-1717-5e83b9717393/status?branch=master)](https://codeship.com/projects/148019) [![Gem Version](https://badge.fury.io/rb/bulwark.svg)](https://badge.fury.io/rb/bulwark)
+# Bulwark [![Code Climate](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/badges/b5171ef5b97a22f27c48/gpa.svg)](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/feed) [![Test Coverage](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/badges/b5171ef5b97a22f27c48/coverage.svg)](https://codeclimate.com/repos/571a2d7e5bd56f13060002a9/coverage) [![Gem Version](https://badge.fury.io/rb/bulwark.svg)](https://badge.fury.io/rb/bulwark)
 
 Mass update your S3 file permissions.
 
