@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.homepage              = 'https://github.com/plicjo/bulwark'
   gem.license               = 'MIT'
 
-  gem.files                 = `git ls-files`.split($/)
+  gem.files                 = `git ls-files`.split($/).reject { |f| f.match(%r{^(spec)/}) }
   gem.require_paths         = ['lib']
   gem.required_ruby_version = '>= 2.0.0'
   gem.bindir                = 'bin'
