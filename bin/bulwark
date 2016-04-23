@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby -U
 require 'bulwark'
 
-Bulwark::S3FilePermittor.new(ARGV).change_permissions
+Bulwark::FilePermittor.new(ARGV).change_permissions

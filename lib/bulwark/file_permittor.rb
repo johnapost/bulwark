@@ -1,5 +1,5 @@
 module Bulwark
-  class S3FilePermittor
+  class FilePermittor
     attr_reader :permission
 
     def initialize(command)
@@ -13,23 +13,15 @@ module Bulwark
       exit
     end
 
-    def files
-      client.list_objects(bucket: bucket).contents
-    end
-
-    def file_keys
-      files.map { |file| file.key }
-    end
-
     def change_permissions
-      file_keys.each do |key|
-        Aws::S3::ObjectAcl.new(bucket, key, client: client).put({ acl: permission })
-        puts "#{key} is now #{permission}"
+      s3_bucket.files.each do |file|
+        Aws::S3::ObjectAcl.new(s3_bucket.name, file[:key], client: s3_bucket.client).put({ acl: permission })
+        puts "#{file[:file_name]} is now #{permission}"
       end
     end
 
-    def bucket
-      ENV.fetch('S3_BUCKET')
+    def s3_bucket
+      @s3_bucket ||= Bulwark::S3Bucket.new
     end
 
     private
@@ -40,16 +32,6 @@ module Bulwark
         'publicize'       => 'public-read',
         'publicize_files' => 'public-read'
       }.fetch(command)
-    end
-
-    def client
-      @client ||= begin
-        Aws::S3::Client.new(
-          access_key_id: ENV.fetch('S3_ACCESS_KEY_ID'),
-          secret_access_key: ENV.fetch('S3_SECRET_ACCESS_KEY'),
-          region: ENV.fetch('S3_REGION')
-        )
-      end
     end
   end
 end
