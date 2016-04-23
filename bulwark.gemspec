@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.test_files            = gem.files.grep(%r{^(spec)/}) { |f| File.basename(f) }
 
   gem.add_development_dependency 'bundler', '~> 1.10'
+  gem.add_development_dependency 'codeclimate-test-reporter', '~> 0.5'
   gem.add_development_dependency 'rake'   , '~> 10.0'
   gem.add_development_dependency 'rspec'  , '~> 3.4'
   gem.add_development_dependency 'pry'    , '~> 0.10.3'
