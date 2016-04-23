@@ -2,8 +2,8 @@ module Bulwark
   class FilePermittor
     attr_reader :permission
 
-    def initialize(command)
-      @permission = set_permission(command.first)
+    def initialize(argv)
+      @permission = set_permission(argv.first)
     end
 
     def change_permissions
